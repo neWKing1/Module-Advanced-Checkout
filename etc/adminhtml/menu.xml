@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<!--
+  ~ /*
+  ~  * @author    Tigren Solutions <info@tigren.com>
+  ~  * @copyright Copyright (c) 2023 Tigren Solutions <https://www.tigren.com>. All rights reserved.
+  ~  * @license   Open Software License ("OSL") v. 3.0
+  ~  */
+  -->
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Tigren::top_level" title="Tigren" module="Tigren_AdvancedCheckout" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Tigren_AdvancedCheckout::index_index" title="index index" module="Tigren_AdvancedCheckout" sortOrder="9999" resource="Tigren_AdvancedCheckout::index_index" parent="Tigren::top_level" action="tigren/index/index"/>
+	</menu>
+</config>
