@@ -88,10 +88,9 @@
                 title: "Advanced Checkout",
                 buttons: [
                     {
-                        text: $.mage.__('Proceed Add To Cart'),
+                        text: $.mage.__('Proceed to checkout '),
                         click: function () {
-                            console.log('sc.....');
-                            // Do something here........
+                            window.location.href = '<?= $block->getUrl() . '/checkout' ?>';
                         }
                     },
                     {
