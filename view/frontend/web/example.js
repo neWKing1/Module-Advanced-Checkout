@@ -5,12 +5,15 @@
  *  * @license   Open Software License ("OSL") v. 3.0
  *
  */
+define([
+    'jquery',
+], function ($) {
+    'use strict';
+    $('#some-element').click(function () {
+        console.log("A simple Example module");
+    });
 
-define([], function(){
-    alert("A simple Example module");
-    console.log("A simple Example module");
-    return function(config) {
+    return function (config) {
         console.log(config);
-
-    }
+    };
 });

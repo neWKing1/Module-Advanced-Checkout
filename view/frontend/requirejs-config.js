@@ -10,4 +10,9 @@ var config = {
     paths: {
         'scriptByDuongDh': "Tigren_AdvancedCheckout/example"
     },
+    mixins: {
+        'Magento_Swatches/js/swatch-renderer': {
+            'Tigren_AdvancedCheckout/js/swatch-renderer-mixin': true
+        }
+    }
 };
