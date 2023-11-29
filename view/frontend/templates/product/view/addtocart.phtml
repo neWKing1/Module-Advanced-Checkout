@@ -80,7 +80,23 @@
         "Magento_Ui/js/modal/modal",
         'Magento_Customer/js/customer-data'
     ], function ($, urlBuilder, modal, customerData) {
-       $('#product-addtocart-button').click(function () {
+       $('#product-addtocart-button').click(function (e) {
+           const sku = "<?= $_product->getSku()?>";
+           $.ajax({
+               url: urlBuilder.build("tigren/ajax/index"),
+               method: "POST",
+               data: {
+                   sku: sku,
+               },
+               success: function (response) {
+                   // console.log(response)
+                   if(response.popup == true) {
+                       var popupdata = $('<div />').append($('#popup-modal'));
+                       modal(options, popupdata);
+                       popupdata.modal('openModal');
+                   }
+               }
+           })
             var options = {
                 type: 'popup',
                 responsive: true,
@@ -102,25 +118,20 @@
                                 type: "POST",
                                 showLoader: true,
                                 success: function (response) {
-                                    console.log(response);
+                                    // console.log(response);
                                     var sections = ['cart'];
                                     customerData.invalidate(sections);
                                     customerData.reload(sections, true);
-
                                 },
                                 error: function (error) {
                                     console.error(error);
                                 }
                             })
-
-
                         }
                     }
                 ]
             };
-            var popupdata = $('<div />').append($('#popup-modal'));
-            modal(options, popupdata);
-            popupdata.modal('openModal');
+
         });
     });
 </script>

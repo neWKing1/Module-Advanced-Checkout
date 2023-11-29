@@ -10,9 +10,15 @@ var config = {
     paths: {
         'scriptByDuongDh': "Tigren_AdvancedCheckout/example"
     },
-    mixins: {
-        'Magento_Swatches/js/swatch-renderer': {
-            'Tigren_AdvancedCheckout/js/swatch-renderer-mixin': true
+    config: {
+        mixins: {
+            'Magento_Catalog/js/catalog-add-to-cart': {
+                'Tigren_AdvancedCheckout/js/catalog-add-to-cart': true
+            },
+            'Magento_Swatches/js/swatch-renderer': {
+                'Tigren_AdvancedCheckout/js/swatch-renderer-mixin': true
+            }
         }
     }
+
 };

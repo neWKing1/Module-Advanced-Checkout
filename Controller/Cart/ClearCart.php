@@ -10,12 +10,12 @@
 namespace Tigren\AdvancedCheckout\Controller\Cart;
 
 use Magento\Checkout\Model\Sidebar;
+use Magento\Framework\App\Action\Action;
 use Magento\Backend\App\Action\Context;
 use Magento\Checkout\Model\Session as CheckoutSession;
 use Magento\Framework\Controller\Result\Json;
 use Magento\Framework\Controller\Result\JsonFactory;
 use  Magento\Checkout\Model\Cart as CustomerCart;
-use Magento\Framework\App\Action\Action;
 
 /**
  * Class ClearCart
@@ -57,7 +57,8 @@ class ClearCart extends Action
     public function execute()
     {
         $quoteItems = $this->checkoutSession->getQuote()->getItemsCollection();
-        foreach ($quoteItems as $item) {
+        foreach($quoteItems as $item)
+        {
 //            $this->sidebar->removeQuoteItem($item->getId());
             $this->cart->removeItem($item->getId())->save();
         }
