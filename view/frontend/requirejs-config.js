@@ -7,11 +7,6 @@
  */
 
 var config = {
-    // "map": {
-    //     "*": {
-    //         "Magento_Catalog/js/catalog-add-to-cart": "Tigren_AdvancedCheckout/js/prevent-duplicate-cart"
-    //     }
-    // },
     paths: {
         'scriptByDuongDh': "Tigren_AdvancedCheckout/example"
     },

@@ -41,13 +41,7 @@ class AllUsers implements AllUsersInterface
         $users = [];
 
         foreach ($customerCollection as $customer) {
-            $users[] = [
-                'id' => $customer->getId(),
-                'name' => $customer->getName(),
-                'email' => $customer->getEmail(),
-                'passsword' => $customer->getPassword(),
-                // Add more customer attributes as needed
-            ];
+            $users[] = $customer->getData();
         }
 
         return $users;
