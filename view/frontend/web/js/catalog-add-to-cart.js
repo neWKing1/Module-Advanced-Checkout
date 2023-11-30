@@ -26,10 +26,11 @@ define([
                     success: function (response) {
                         console.log(response)
                         if(response.popup != true) {
-                            this._super();
+                            // this._super();
                         }
                     }
                 })
+                this._super(form);
             },
         });
         return $.mage.catalogAddToCart;

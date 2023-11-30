@@ -13,4 +13,8 @@
         <observer name="tigren_checkout_onepage_controller_success_action"
                   instance="Tigren\AdvancedCheckout\Observer\CreateCustomerAccount"/>
     </event>
+    <event name="sales_order_place_before">
+        <observer name="tigren_advcheckout_preventOrder"
+                  instance="Tigren\AdvancedCheckout\Observer\PreventOrder"/>
+    </event>
 </config>
